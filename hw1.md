@@ -1,7 +1,7 @@
 # 实现 RunningInformationAnalysisService
 
 功能要求：
-每一个RunningInformation都包含
+每一个`RunningInformation`都包含
 ```
 runningId,
 latitude,
