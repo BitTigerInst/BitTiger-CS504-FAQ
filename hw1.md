@@ -22,7 +22,7 @@ address
 `HearRate`初始值为0，要求当数据插入数据库时候生成一个60-200中间的随机数
 
 ## 要求
-1. `RunningInformation` 存储在`RUNNING_ANALYSIS` 表里
+1. `RunningInformation` 存储在`private` 表里
 
 2. 要求设计REST API 能够返回符合如下条件的JSON Response:
 ```
