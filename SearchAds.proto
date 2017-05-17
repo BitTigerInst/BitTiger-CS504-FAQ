@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.bittiger.adindex";
+option java_outer_classname = "SearchAds";
+option objc_class_prefix = "ADS";
+
+package adindex;
+
+// The greeting service definition.
+service AdsIndex {
+  // Sends a greeting
+  rpc GetAds (AdsRequest) returns (AdsReply) {}
+}
+
+message Query {
+  repeated string term  = 1;
+}
+
+message Ad {
+  int64 adId = 1;
+	int64 campaignId = 2;
+	repeated string keyWords = 3;
+	double relevanceScore = 4;
+	double pClick = 5;
+	double bidPrice = 6;
+	double rankScore = 7;
+	double qualityScore = 8;
+	double costPerClick = 9;
+	int32 position = 10;//1: top , 2: bottom
+  string title = 11; // required
+  double price = 12; // required
+  string thumbnail = 13; // required
+  string description = 14; // required
+  string brand = 15; // required
+  string detail_url = 16; // required
+  string query = 17; //required
+  string category = 18;
+}
+
+message AdsRequest {
+  repeated Query query = 1;
+}
+
+// The response message containing the greetings
+message AdsReply {
+  repeated Ad ad = 1;
+}
